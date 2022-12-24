@@ -1,0 +1,13 @@
+version: "2"
+services:
+    bot:
+        build: bot/
+        command: python ./bot.py
+
+    redis:
+        image: redis
+        environment:
+            - ALLOW_EMPTY_PASSWORD=yes
+        ports:
+            - '6379:6379'        
+
